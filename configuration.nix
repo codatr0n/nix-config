@@ -49,14 +49,15 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+ 
   # Enable the KDE Plasma Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "dk";
+    layout = "us,dk";
     xkbVariant = "";
   };
 
@@ -86,21 +87,30 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # add zsh shell
+  environment.shells = with pkgs; [ zsh ];
+  programs.zsh = {
+    enable = true; 
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.funk = {
     isNormalUser = true;
     description = "Funk";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #   firefox
-    #  thunderbird
-
-    # VS Code extensions
-    vscode-extensions.jnoortheen.nix-ide
-    vscode-extensions.ms-python.python
-    
+              # GNOME
+      gnomeExtensions.shell-configurator
+      gnomeExtensions.dash-to-dock
+      gnome.gnome-shell-extensions
+      gnomeExtensions.wifi-switcher
+     
     ];
   };
+
+  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -109,46 +119,19 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
 
-      # Gnome specific
-      gnome.gnome-tweaks
-
-
-      fwupd
-      tailscale tailscale-systray
-
-      # gui customization
-      ulauncher
-
-      # gui apps
       firefox
-      hardinfo
-      spotify
 
-      # syncthing
-      syncthing syncthingtray
 
-      # terminal apps
-      mc
       curl
       wget
-      ncdu
-      ansible
-      ansible-lint
-      ventoy-full
       fwupd
-      
-      
-      # terminal customization
-      alacritty
-      neofetch
-
-      # dev stuff
       git
       python311 
-      vscode
-      terraform
+
+      # printing
+      gutenprint
+      hplip
 
   ];
 
