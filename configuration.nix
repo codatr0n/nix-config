@@ -167,6 +167,7 @@
       fwupd
       git
       python311 
+      gh
 
       # printing
       gutenprint
