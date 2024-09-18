@@ -15,7 +15,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "vm-nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -50,19 +50,45 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  # services.gnome.core-utilities.enable = false; # disable built-in gnome apps
+  # exclude individual gnome apps
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    epiphany
+    gnome-calendar
+    gnome-maps
+    gnome-music
+    geary
+    totem
+    yelp
+  ];
  
-  # Enable the KDE Plasma Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
+
+
+
+  # Enable auto optimising the store - funk 2024.09.18
+  nix.settings.auto-optimise-store = true;
+
+  # nix garbage collect
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 15d";
+  };
+
+  # disable passwords
+  security = {
+    sudo.wheelNeedsPassword = false;
+  };
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us,dk";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "dk-latin1";
+  # console.keyMap = "dk-latin1";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -91,6 +117,13 @@
   environment.shells = with pkgs; [ zsh ];
   programs.zsh = {
     enable = true; 
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      "ls" = "eza -alh --group-directories-first --time-style=long-iso --icons --git";
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -100,28 +133,34 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-    #   firefox
-              # GNOME
-      gnomeExtensions.shell-configurator
-      gnomeExtensions.dash-to-dock
-      gnome.gnome-shell-extensions
-      gnomeExtensions.wifi-switcher
+
+      # GNOME
+      # gnomeExtensions.shell-configurator
+      # gnomeExtensions.dash-to-dock
+      # gnome.gnome-shell-extensions
+      # gnomeExtensions.wifi-switcher
      
     ];
   };
 
-  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # auto upgrades - funk 2024.09.18
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://channels.nixos.org/nixos-24.05";
+  };
+
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 
       firefox
-
+      google-chrome
 
       curl
       wget
@@ -133,7 +172,15 @@
       gutenprint
       hplip
 
+      kdePackages.kate
+
+      alacritty
+      eza
+      bat
+
+
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -156,6 +203,7 @@
 
   # Flatpak
   services.flatpak.enable = true;
+  xdg.portal.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -169,6 +217,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
