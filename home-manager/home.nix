@@ -6,24 +6,17 @@
   home.username = "funk";
   home.homeDirectory = "/home/funk";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "24.05";
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.config.allowUnfreePredicate = true;
 
   # IMPORTS
   imports = [
-    ./apps/zsh.nix
-    ./apps/alacritty.nix
-    ./config/gnome.nix
-    ./config/fonts.nix
+#     ./apps/zsh.nix
+#     ./apps/alacritty.nix
+#     ./config/gnome.nix
+#     ./config/fonts.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -31,39 +24,39 @@
   home.packages = with pkgs; [
 
       # tailscale
-      tailscale tailscale-systray
+#       tailscale tailscale-systray
 
       # gui customization
-      ulauncher
+#       ulauncher
 
       # gui apps
       # firefox
-      hardinfo
-      spotify
+#       hardinfo
+#       spotify
 
       # syncthing
-      syncthing syncthingtray
+#       syncthing syncthingtray
 
       # terminal apps
-      mc
+#       mc
       ncdu
-      ansible
-      ansible-lint
-      ventoy-full
-      htop
-      btop
+#       ansible
+#       ansible-lint
+#       ventoy-full
+#       htop
+#       btop
       
       # terminal customization
-      alacritty
+#       alacritty
       neofetch
-      exa
-      bat
+#       exa
+#       bat
 
       # dev stuff
-      git
-      python311 
-      vscode
-      terraform
+#       git
+#       python311
+#       vscode
+#       terraform
 
 
   ];
