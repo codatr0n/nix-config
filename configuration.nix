@@ -8,6 +8,7 @@
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
+    warn-dirty = false;
   };
 
 
@@ -57,7 +58,8 @@
     sudo.wheelNeedsPassword = false;
   };
 
-
+  # qemu guest agent
+  services.qemuGuest.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

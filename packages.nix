@@ -52,6 +52,9 @@
     yt-dlp
     glxinfo
 
+    # vs code server
+    code-server
+
   ];
 
 }
