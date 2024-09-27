@@ -69,17 +69,18 @@
 
     # add zsh shell
   environment.shells = with pkgs; [ zsh ];
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      "ls" = "eza -alh --group-directories-first --time-style=long-iso --icons --git";
-      "nrs" = "sudo nixos-rebuild switch";
-    };
-  };
+#   programs.zsh.enable = true;
+#   programs.zsh = {
+#     enable = true;
+#     enableCompletion = true;
+#     autosuggestions.enable = true;
+#     syntaxHighlighting.enable = true;
+#
+#     shellAliases = {
+#       "ls" = "eza -alh --group-directories-first --time-style=long-iso --icons --git";
+#       "nrs" = "sudo nixos-rebuild switch";
+#     };
+#   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.funk = {
@@ -87,17 +88,9 @@
     description = "Funk";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-
-      # GNOME
-      # gnomeExtensions.shell-configurator
-      # gnomeExtensions.dash-to-dock
-      # gnome.gnome-shell-extensions
-      # gnomeExtensions.wifi-switcher
-     
-    ];
   };
 
+  home-manager.backupFileExtension = "backup";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

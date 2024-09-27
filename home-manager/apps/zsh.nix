@@ -1,26 +1,34 @@
   { pkgs, ...}:
   
   {
+    home.packages = with pkgs; [ fzf ];
+
+    home.shellAliases = {
+          "ls" = "eza -alh --group-directories-first --time-style=long-iso --icons --git";
+          "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#";
+        };
+
     programs.zsh = {
         enable = true;
         enableCompletion = true;
-        enableAutosuggestions = true;
-        enableSyntaxHighlighting = true;
-        shellAliases = {
-            ls = "exa -alh --time-style=long-iso --icons --git";
-            
-            hs = "home-manager switch";
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+        history = {
+          size = 10000;
+          save = 10000;
+          share = true;
         };
+
         oh-my-zsh = {
             enable = true;
-            plugins = [ 
-                "docker-compose" 
-                "docker" 
+            plugins = [
+                "docker-compose"
+                "docker"
             ];
             theme = "jonathan";
             };
         initExtra = ''
-        bindkey '^f' autosuggest-accept
+          bindkey '^f' autosuggest-accept
         '';
     };
     # programs.zsh.plugins = [

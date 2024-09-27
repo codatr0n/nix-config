@@ -13,11 +13,13 @@
 
   # IMPORTS
   imports = [
-#     ./apps/zsh.nix
+    ./apps/zsh.nix
 #     ./apps/alacritty.nix
 #     ./config/gnome.nix
 #     ./config/fonts.nix
   ];
+
+#   programs.zsh.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
