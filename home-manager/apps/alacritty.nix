@@ -37,7 +37,6 @@
         bold.family = "FiraCode Nerd Font";
         italic.family = "FiraCode Nerd Font";
         size = 10.0;
-        style = "Bold";
         offset = {
             x = 0;
             y = 0;
