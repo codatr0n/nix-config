@@ -15,7 +15,7 @@
   imports = [
     ./apps/zsh.nix
     ./apps/alacritty.nix
-#     ./config/gnome.nix
+    ./config/gnome.nix
 #     ./config/fonts.nix
   ];
 

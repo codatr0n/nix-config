@@ -7,21 +7,22 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-  # services.gnome.core-utilities.enable = false; # disable built-in gnome apps
+
   # exclude individual gnome apps
   environment.gnome.excludePackages = with pkgs.gnome; [
     epiphany
+    gnome-contacts
     gnome-calendar
     gnome-maps
     gnome-music
+    gnome-shell-extensions
     geary
     totem
     yelp
   ];
 
-  environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
-  ];
+  programs.dconf.enable = true;
 
 }

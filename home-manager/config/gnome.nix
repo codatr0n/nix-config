@@ -1,43 +1,74 @@
 { config, pkgs, stdenv, lib, ... }:
 
 {
-   home.packages = with pkgs; [
 
-      # Gnome specific
-      gnome.gnome-tweaks 
+  dconf.enable = true;
 
-      # extensions
-      gnomeExtensions.dash-to-dock
-   ];
+  home.packages = with pkgs; [
 
-   # programs.dconf.enabled = true;
+    # Gnome specific
+    dconf2nix
+    gnome.dconf-editor
+    gnome.gnome-tweaks
+    gnome-extensions-cli
 
-   dconf.settings = {
+    # extensions
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.system-monitor
+    gnomeExtensions.tailscale-qs
+  ];
 
-      "org/gnome/desktop/wm/preferences" = {
-         button-layout = "close,minimize,maximize:appmenu";
-         num-workspaces = 1;
-      };
+  dconf.settings = {
 
-      "org/gnome/shell" = {
-         disable-user-extensions = false;
+    "org/gnome/desktop/wm/preferences" = {
+        button-layout = "close,minimize,maximize:appmenu";
+        num-workspaces = 1;
+    };
 
-         enable-extensions = [
-            "appindicatorsupport@rgcjonas.gmail.com"
-            "dash-to-dock@micxgx.gmail.com"
-            "user-theme@gnome-shell-extensions.gcampax.github.com"
-         ];
-      };
+    "org/gnome/desktop/interface" = {
+      clock-show-weekday = false;
+    };
 
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        custom-theme-shrink = true;
-        scroll-action = "cycle-windows";
-        click-action = "skip";
-        show-mounts = false;
-        show-trash = false;
-        show-show-apps-button = false;
-        running-indicator-style = "DOTS";
-        hot-keys = false;
-      };
-   };
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "dash-to-panel@jderose9.github.com"
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "tailscale@joaophi.github.com" # tailscale qs
+      ];
+      disabled-extensions = [ ];
+    };
+
+    "org/gnome/shell/extensions/dash-to-panel" = {
+      appicon-margin = 4;
+      appicon-padding = 4;
+      available-monitors = [ 0 ];
+      dot-color-dominant = true;
+      dot-color-override = false;
+      dot-position = "BOTTOM";
+      dot-style-focused = "DOTS";
+      dot-style-unfocused = "DOTS";
+      focus-highlight-dominant = true;
+      hot-keys = true;
+      hotkeys-overlay-combo = "TEMPORARILY";
+      leftbox-padding = -1;
+      panel-anchors = ''
+        {"0":"MIDDLE"}
+      '';
+      panel-lengths = ''
+        {"0":100}
+      '';
+      panel-sizes = ''
+        {"0":32}
+      '';
+      primary-monitor = 0;
+      status-icon-padding = -1;
+      trans-panel-opacity = 0.8;
+      trans-use-custom-opacity = true;
+      tray-padding = -1;
+      window-preview-title-position = "TOP";
+    };
+  };
 }
