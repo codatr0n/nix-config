@@ -19,17 +19,17 @@
           share = true;
         };
 
-        oh-my-zsh = {
-            enable = true;
-            plugins = [
-                "docker-compose"
-                "docker"
-            ];
-            theme = "jonathan";
-            };
-        initExtra = ''
-          bindkey '^f' autosuggest-accept
-        '';
+#         oh-my-zsh = {
+#             enable = true;
+#             plugins = [
+#                 "docker-compose"
+#                 "docker"
+#             ];
+#             theme = "jonathan";
+#             };
+#         initExtra = ''
+#           bindkey '^f' autosuggest-accept
+#         '';
     };
     # programs.zsh.plugins = [
     #     {
