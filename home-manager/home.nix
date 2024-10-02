@@ -14,7 +14,7 @@
   # IMPORTS
   imports = [
     ./apps/zsh.nix
-    ./apps/starsip.nix
+    ./apps/starship.nix
     ./apps/alacritty.nix
     ./config/gnome.nix
 #     ./config/fonts.nix
@@ -60,7 +60,7 @@
 #       python311
 #       vscode
 #       terraform
-
+      tldr
 
   ];
 
