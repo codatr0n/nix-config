@@ -12,9 +12,11 @@
     gnome.gnome-tweaks
     gnome-extensions-cli
 
-    gnomeExtensions.xwayland-indicator
+    # extensions
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.system-monitor
+    gnomeExtensions.tailscale-qs
   ];
 
   dconf.settings = {
@@ -31,12 +33,10 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-#         "appindicatorsupport@rgcjonas.gmail.com"
-#         "apps-menu@gnome-shell-extensions.gcampax.github.com"
         "dash-to-panel@jderose9.github.com"
-#         "emoji-copy@felipeftn"
-#         "display-brightness-ddcutil@themightydeity.github.com"
-#         "gnome-shell-extension-trash"
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "tailscale@joaophi.github.com" # tailscale qs
       ];
       disabled-extensions = [ ];
     };
