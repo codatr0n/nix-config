@@ -6,6 +6,13 @@
 		starship
 	];
 
+#     home.file = {
+#       ".config/starship.toml" = {
+#         source = ../config/starship.toml;
+#         recursive = true;
+#       };
+#     }
+
     programs.starship = {
       enable = true;
 
