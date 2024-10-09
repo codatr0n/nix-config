@@ -16,7 +16,8 @@
     ./apps/zsh.nix
     ./apps/starship.nix
     ./apps/alacritty.nix
-    ./config/gnome.nix
+#     ./config/gnome.nix
+    ./config/kde.nix
 #     ./config/fonts.nix
   ];
 
