@@ -19,6 +19,8 @@
 #     ./config/gnome.nix
     ./config/kde.nix
 #     ./config/fonts.nix
+
+    ./apps/dropbox.nix
   ];
 
 #   programs.zsh.enable = true;

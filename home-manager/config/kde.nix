@@ -27,6 +27,8 @@
     kdePackages.plasma-disks
     kdePackages.kweather
 
+    kdePackages.dolphin-plugins
+
 
     tailscale-systray
 
