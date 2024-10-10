@@ -29,42 +29,12 @@
   # environment.
   home.packages = with pkgs; [
 
-      # tailscale
-#       tailscale tailscale-systray
-
-      # gui customization
-#       ulauncher
-
-      # gui apps
-      # firefox
-#       hardinfo
-#       spotify
-
-      # syncthing
-#       syncthing syncthingtray
-
-      # terminal apps
-#       mc
-      ncdu
-#       ansible
-#       ansible-lint
-#       ventoy-full
-#       htop
-#       btop
-      
-      # terminal customization
-#       alacritty
-      neofetch
-#       exa
-#       bat
-
-      # dev stuff
-#       git
-#       python311
-#       vscode
-#       terraform
-      tldr
+      librewolf               # more secure firefox
       bitwarden-desktop
+
+      tldr                    # user friendly man page
+      preload                 # Makes applications run faster by prefetching binaries and shared objects
+
 
   ];
 
