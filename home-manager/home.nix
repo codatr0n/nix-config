@@ -16,8 +16,11 @@
     ./apps/zsh.nix
     ./apps/starship.nix
     ./apps/alacritty.nix
-    ./config/gnome.nix
+#     ./config/gnome.nix
+    ./config/kde.nix
 #     ./config/fonts.nix
+
+    ./apps/dropbox.nix
   ];
 
 #   programs.zsh.enable = true;
@@ -26,41 +29,12 @@
   # environment.
   home.packages = with pkgs; [
 
-      # tailscale
-#       tailscale tailscale-systray
+      librewolf               # more secure firefox
+      bitwarden-desktop
 
-      # gui customization
-#       ulauncher
+      tldr                    # user friendly man page
+      preload                 # Makes applications run faster by prefetching binaries and shared objects
 
-      # gui apps
-      # firefox
-#       hardinfo
-#       spotify
-
-      # syncthing
-#       syncthing syncthingtray
-
-      # terminal apps
-#       mc
-      ncdu
-#       ansible
-#       ansible-lint
-#       ventoy-full
-#       htop
-#       btop
-      
-      # terminal customization
-#       alacritty
-      neofetch
-#       exa
-#       bat
-
-      # dev stuff
-#       git
-#       python311
-#       vscode
-#       terraform
-      tldr
 
   ];
 
