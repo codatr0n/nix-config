@@ -64,6 +64,7 @@
 #       vscode
 #       terraform
       tldr
+      bitwarden-desktop
 
   ];
 
