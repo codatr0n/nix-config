@@ -21,6 +21,7 @@
 #     ./config/fonts.nix
 
     ./apps/dropbox.nix
+    ./apps/syncthing.nix
   ];
 
 #   programs.zsh.enable = true;

@@ -15,6 +15,7 @@
     angryipscanner
     distrobox
     vlc
+    syncthing
 
     # kde apps
     kdePackages.kate
