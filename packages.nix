@@ -55,6 +55,10 @@
     # vs code server
     code-server
 
+    # wifi
+    iwd
+    pciutils
+
   ];
 
 }
