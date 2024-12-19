@@ -35,6 +35,7 @@
     tree
     nmap
     lshw
+    dmidecode
 
     # developer stuff
     python311
