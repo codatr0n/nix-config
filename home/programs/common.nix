@@ -28,6 +28,8 @@
     dmidecode
 
     # desktop
+    bitwarden-desktop
+    librewolf
     trayscale
     firefox
     google-chrome
