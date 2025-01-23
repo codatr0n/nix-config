@@ -35,7 +35,8 @@
 
       thinknix-t460 = let
         username = "funk";
-        specialArgs = {inherit username;};
+        stateVersion = "24.05";
+        specialArgs = {inherit username stateVersion; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
