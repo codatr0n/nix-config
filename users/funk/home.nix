@@ -7,6 +7,10 @@
 
   imports = [
     ../../home/core.nix
+    ../../zsh.nix
+    ../../alacritty.nix
+    ../../starship.nix
+    ../../dropbox.nix
 
   ];
 
@@ -14,4 +18,5 @@
     userName = "Erik MK";
     userEmail = "mail@erikmk.dk";
   };
+
 }
