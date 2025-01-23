@@ -7,10 +7,10 @@
 
   imports = [
     ../../home/core.nix
-    ../../zsh.nix
-    ../../alacritty.nix
-    ../../starship.nix
-    ../../dropbox.nix
+    ../../home/programs/zsh.nix
+    ../../home/programs/alacritty.nix
+    ../../home/programs/starship.nix
+    ../../home/programs/dropbox.nix
 
   ];
 
