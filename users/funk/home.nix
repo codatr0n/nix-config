@@ -7,6 +7,7 @@
 
   imports = [
     ../../home/core.nix
+    ../../home/programs/common.nix
     ../../home/programs/zsh.nix
     ../../home/programs/alacritty.nix
     ../../home/programs/starship.nix
