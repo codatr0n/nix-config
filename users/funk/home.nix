@@ -11,6 +11,8 @@
     ../../home/programs/alacritty.nix
     ../../home/programs/starship.nix
     ../../home/programs/dropbox.nix
+    ../../home/config/fonts.nix
+    ../../home/config/kde.nix
 
   ];
 
