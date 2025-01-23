@@ -11,8 +11,56 @@
 
     # utils
     ripgrep
-    htop
     tldr
+    curl
+    wget
+    fwupd
+    git
+    tmux
+    htop
+    btop
+    gtop
+    iperf3
+    ipmitool
+    tree
+    nmap
+    lshw
+    dmidecode
+
+    # desktop
+    trayscale
+    firefox
+    google-chrome
+    spotify
+    alacritty
+    krita
+    rustdesk-flutter
+    angryipscanner
+    distrobox
+    vlc
+
+    # developer stuff
+    python311
+    gh
+
+    # printing
+    gutenprint
+    hplip
+
+    # terminal tools
+    eza
+    bat
+    fastfetch
+    ventoy
+    yt-dlp
+    glxinfo
+
+    # vs code server
+    code-server
+
+    # wifi
+    iwd
+    pciutils
 
   ];
 
