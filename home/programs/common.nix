@@ -40,6 +40,7 @@
     angryipscanner
     distrobox
     vlc
+    joplin-desktop
 
     # developer stuff
     python311
