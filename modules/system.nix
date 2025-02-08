@@ -35,11 +35,6 @@
     options = "--delete-older-than 60d";
   };
 
-  # auto upgrades - funk 2024.09.18
-  system.autoUpgrade = {
-    enable = true;
-    channel = "https://channels.nixos.org/nixos-24.05";
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
