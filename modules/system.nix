@@ -32,7 +32,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 15d";
+    options = "--delete-older-than 60d";
   };
 
   # auto upgrades - funk 2024.09.18
@@ -55,6 +55,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable fingerprint reader
+  services.fprintd.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
