@@ -36,7 +36,8 @@
     tree
     nmap
     lshw
-    dmidecode
+    dmidecode # show bios stuff
+    usbutils # usb utilities like lsusb
 
     # developer stuff
     python311
