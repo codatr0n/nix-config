@@ -60,6 +60,34 @@
 
        ##############################################################################
 
+
+      thinknix-t480 = let
+        username = "funk";
+        stateVersion = "24.05";
+        specialArgs = {inherit username stateVersion; };
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+
+          modules = [
+            ./hosts/thinknix-t480
+            ./users/${username}/nixos.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+            }
+
+          ];
+        };
+
+       ##############################################################################
+
     };
   };
 }

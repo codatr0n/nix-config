@@ -19,6 +19,7 @@
     # kde apps
     kdePackages.kate
     kdePackages.konsole
+    kdiskmark
 
     # common
     curl
