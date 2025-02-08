@@ -13,6 +13,7 @@
       ./hardware-configuration.nix
 
       ../../modules/thunderbolt.nix
+      ../../modules/bluetooth.nix
 
       ../../modules/system.nix
       ../../modules/keyboard.nix
