@@ -15,6 +15,7 @@
     angryipscanner
     distrobox
     vlc
+    joplin-desktop
 
     # kde apps
     kdePackages.kate
