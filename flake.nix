@@ -2,11 +2,11 @@
   description = "NixOS configuration for Funk";
 
   inputs = {
-    # NixOS official package source, here using the nixos-24.05 branch
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    # NixOS official package source, here using the nixos-24.11 branch
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -35,7 +35,7 @@
 
       thinknix-t460 = let
         username = "funk";
-        stateVersion = "24.05";
+        stateVersion = "24.11";
         specialArgs = {inherit username stateVersion; };
       in
         nixpkgs.lib.nixosSystem {
@@ -63,7 +63,7 @@
 
       thinknix-t480 = let
         username = "funk";
-        stateVersion = "24.05";
+        stateVersion = "24.11";
         specialArgs = {inherit username stateVersion; };
       in
         nixpkgs.lib.nixosSystem {

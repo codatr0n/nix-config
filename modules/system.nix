@@ -10,8 +10,16 @@
   users.users.funk = {
     isNormalUser = true;
     description = "Funk";
-    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "adbusers"
+      "libvirtd"
+      "video"
+      "render"
+      "audio"
+    ];
   };
 
   home-manager.backupFileExtension = "backup";
