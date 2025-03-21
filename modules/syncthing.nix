@@ -4,7 +4,7 @@
   # Syncthing
 
   environment.systemPackages = with pkgs; [
-    syncthingtray
+#     syncthingtray # stable version 1.6.2 doesnt seem to work
     stc-cli
   ];
 
@@ -14,7 +14,7 @@
     user = "${username}";
     dataDir = "/home/${username}";
     configDir = "/home/${username}/.config/syncthing";
-    group = "users";
+#     group = "users";
     guiAddress = "0.0.0.0:8384";
 
   };
