@@ -6,6 +6,8 @@
 
     settings = {
 
+      general.live_config_reload = true;
+
       window = {
         title = "Terminal";
 
@@ -45,12 +47,10 @@
 
       window.opacity = 0.95;
 
-      shell = { 
+      terminal.shell = {
         program = "${pkgs.zsh}/bin/zsh"; 
         # args = ["-e" "echo; neofetch; echo" ];
       };
-
-      live_config_reload = true;
 
       # Snazzy color theme
       colors = {

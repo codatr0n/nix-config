@@ -2,6 +2,8 @@
 
 # terminals
 
+# this file is unused - TODO: merge with alacritty.nix
+
 let
   font = "JetBrainsMono Nerd Font";
 in
