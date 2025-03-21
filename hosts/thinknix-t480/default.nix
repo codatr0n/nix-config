@@ -24,6 +24,7 @@
 #       ../../modules/gnome.nix
       ../../modules/kde.nix
       ../../modules/syncthing.nix
+      ../../modules/warp.nix
 
     ];
 
