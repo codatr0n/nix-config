@@ -8,7 +8,6 @@
     zip
     unzip
     p7zip
-
     # utils
     ripgrep
     tldr
@@ -65,6 +64,7 @@
     iwd
     pciutils
 
+    udiskie  # Auto mount usb drives
   ];
 
   programs = {
@@ -87,8 +87,5 @@
 
   services = {
     syncthing.enable = true;
-
-    # auto mount usb drives
-    udiskie.enable = true;
   };
 }
