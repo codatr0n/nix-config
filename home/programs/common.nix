@@ -60,6 +60,10 @@
     # vs code server
     code-server
 
+    # torrents
+    kdePackages.ktorrent
+    qbittorrent
+
     # wifi
     iwd
     pciutils
