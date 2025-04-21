@@ -8,6 +8,9 @@
     zip
     unzip
     p7zip
+    unrar
+    arj
+
     # utils
     ripgrep
     tldr
