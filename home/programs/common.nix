@@ -59,6 +59,7 @@
     ventoy
     yt-dlp
     glxinfo
+    imagemagick
 
     # vs code server
     code-server
