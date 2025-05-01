@@ -63,6 +63,9 @@
     iwd
     pciutils
 
+    # misc
+    rpi-imager # raspberry pi imager
+
   ];
 
 }
