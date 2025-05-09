@@ -39,6 +39,7 @@
     lshw
     dmidecode # show bios stuff
     usbutils # usb utilities like lsusb
+    ncdu
 
     # developer stuff
     python311
@@ -65,6 +66,11 @@
 
     # misc
     rpi-imager # raspberry pi imager
+
+    # filesystems
+    hfsprogs
+    testdisk
+    testdisk-qt
 
   ];
 
