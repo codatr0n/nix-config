@@ -30,9 +30,9 @@
     ];
 
   fileSystems."/mnt/storage" =
-    { device = "/dev/disk/by-label/storage";
-      fsType = "btrfs";
-      options = [ "subvol=@" "fmask=0022" "dmask=0022" ];
+    { device = "/dev/disk/by-uuid/7d3ccfc5-ed14-40d1-b6de-34e35294cb24";
+      fsType = "ext4";
+#       options = [ "subvol=@" "fmask=0022" "dmask=0022" ];
     };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
