@@ -19,6 +19,7 @@
       "video"
       "render"
       "audio"
+      "dialout"
     ];
   };
 

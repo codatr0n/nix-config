@@ -25,6 +25,7 @@
       ../../modules/kde.nix
       ../../modules/syncthing.nix
       ../../modules/warp.nix
+      ../../modules/qflipper.nix
 
     ];
 
