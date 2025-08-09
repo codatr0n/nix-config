@@ -10,6 +10,11 @@
   services.desktopManager.plasma6.enable = true;
 
 
+  environment.systemPackages = [
+    pkgs.partition-manager # for KDE Partition Manager
+  ];
+
+
   services.udev.packages = with pkgs; [
     gnome-settings-daemon
   ];

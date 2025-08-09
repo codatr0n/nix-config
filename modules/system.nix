@@ -60,7 +60,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -73,5 +72,8 @@
   # Flatpak
   services.flatpak.enable = true;
   xdg.portal.enable = true;
+
+  # Udisk - auto mount usb drives
+  services.udisks2.enable = true;
 
 }

@@ -95,5 +95,10 @@
 
   services = {
     syncthing.enable = true;
+    # enable udiskie for usb storage mount
+    udiskie = {
+      enable = true;
+    };
+
   };
 }
