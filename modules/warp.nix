@@ -1,9 +1,9 @@
-{ config, pkgs, username, ... }:
+{ config, pkgs, username, pkgs-unstable, ... }:
 
 {
 
-  environment.systemPackages = with pkgs; [
-    warp-terminal
+  environment.systemPackages = [
+    pkgs-unstable.warp-terminal
   ];
 
 }
