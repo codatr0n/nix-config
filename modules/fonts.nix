@@ -20,18 +20,11 @@
     jetbrains-mono
     julia-mono
 
-    (nerdfonts.override { fonts = [
-          "JetBrainsMono"
-          "Iosevka"
-          "Hack"
-          "Meslo"
-          "Terminus"
-          "Monoid"
-          "Inconsolata"
-
-        ];
-      }
-    )
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.meslo-lg
+    nerd-fonts.inconsolata
+    nerd-fonts.monoid
   ];
 
 }

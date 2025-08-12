@@ -80,4 +80,9 @@
 
   ];
 
+  # workaround to allow build with ventoy
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.05"
+  ];
+
 }

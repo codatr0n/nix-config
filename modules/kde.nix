@@ -10,8 +10,8 @@
   services.desktopManager.plasma6.enable = true;
 
 
-  environment.systemPackages = [
-    pkgs.partition-manager # for KDE Partition Manager
+  environment.systemPackages = with pkgs; [
+    kdePackages.partitionmanager # for KDE Partition Manager
   ];
 
 

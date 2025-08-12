@@ -3,7 +3,7 @@
 {
   # Enable sound with pipewire.
 #   sound.enable = true;
-  hardware.pulseaudio.enable = false; # if set to true you can't use pipewire
+  services.pulseaudio.enable = false; # if set to true you can't use pipewire
   services.pipewire = {
     enable = true;
     alsa.enable = true;
