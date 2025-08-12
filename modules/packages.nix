@@ -40,10 +40,16 @@
     dmidecode # show bios stuff
     usbutils # usb utilities like lsusb
     ncdu
+    lm_sensors
+    hdparm
+    lsof
+    iotop
+
 
     # developer stuff
     python311
     gh
+    uv
 
     # printing
     gutenprint
