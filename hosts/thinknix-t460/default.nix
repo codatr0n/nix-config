@@ -14,6 +14,7 @@
       ../../modules/packages.nix
       ../../modules/fonts.nix
       ../../modules/zsh.nix
+      ../../modules/networking.nix
 #       ../../modules/gnome.nix
       ../../modules/kde.nix
 

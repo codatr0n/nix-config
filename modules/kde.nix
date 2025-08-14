@@ -12,6 +12,8 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager # for KDE Partition Manager
+    kdePackages.kio-extras              # network:/ support in Dolphin
+    kdePackages.kdenetwork-filesharing  # KDE network sharing tools
   ];
 
 
