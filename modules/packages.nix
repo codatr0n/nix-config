@@ -78,6 +78,12 @@
     testdisk
     testdisk-qt
 
+    # image tools
+    exiftool
+    jhead
+    imagemagick
+
+
   ];
 
   # workaround to allow build with ventoy
