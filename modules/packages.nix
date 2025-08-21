@@ -75,6 +75,7 @@
 
     # filesystems
     hfsprogs
+    exfatprogs
     testdisk
     testdisk-qt
 
