@@ -44,6 +44,7 @@
     hdparm
     lsof
     iotop
+    screen
 
 
     # developer stuff
@@ -71,7 +72,7 @@
     pciutils
 
     # misc
-    rpi-imager # raspberry pi imager
+    # rpi-imager # raspberry pi imager
 
     # filesystems
     hfsprogs
