@@ -5,8 +5,8 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    ubuntu_font_family
-    noto-fonts-emoji
+    ubuntu-classic
+    noto-fonts-color-emoji
     liberation_ttf # replacements for Times New Roman, Arial, and Courier New
     corefonts # microsoft fonts
     gelasio # font which is metric-compatible with Microsoft's Georgia
@@ -18,12 +18,6 @@
     fira-code-symbols
     jetbrains-mono
     julia-mono
-
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.meslo-lg
-    nerd-fonts.inconsolata
-    nerd-fonts.monoid
   ];
 
 }

@@ -13,20 +13,18 @@ hosts/thinknix-t480/      # ThinkPad T480 config + hardware scan
 modules/                  # NixOS system modules (kde, sound, networking, etc.)
 home/                     # Home-manager config (programs, shell, fonts, KDE user config)
 users/funk/               # Per-user nixos.nix + home.nix
+update.sh                 # Update flake inputs
+check.sh                  # Validate flake
+rebuild.sh                # Rebuild NixOS (defaults to thinknix-t480)
 ```
 
-## How to rebuild
+## Convenience scripts
 
 ```bash
-sudo nixos-rebuild switch --flake ~/nix-config/#thinknix-t480
-sudo nixos-rebuild switch --flake ~/nix-config/#thinknix-t460
-```
-
-## How to update packages
-
-```bash
-nix flake update
-# then rebuild
+./update.sh                         # Update flake inputs
+./check.sh                          # Validate the flake
+./rebuild.sh                        # Rebuild (defaults to thinknix-t480)
+./rebuild.sh thinknix-t460          # Rebuild thinknix-t460
 ```
 
 ## Conventions
@@ -35,8 +33,15 @@ nix flake update
 - User-level config goes in `home/`
 - Host-specific hardware in `hosts/<name>/hardware-configuration.nix`
 - Both hosts use KDE Plasma 6 on Wayland (SDDM)
-- GNOME module exists but is commented out on both hosts
 - `pkgs-unstable` is only available on thinknix-t480 (passed via specialArgs)
+
+## Validation (before every rebuild)
+
+Always run this before suggesting `nixos-rebuild switch`:
+
+```bash
+./check.sh
+```
 
 ## UI sluggishness investigation (2026-07-25)
 
@@ -56,9 +61,11 @@ nix flake update
 
 **Changes made:**
 1. `modules/networking.nix` — Removed Samba (kept Avahi + cifs-utils)
-2. `modules/system.nix` — Disabled ModemManager and Baloo via NixOS options
-3. `home/config/kde.nix` — Added kwinrc config: disabled blur, set AnimationSpeed=0 (instant)
+2. `modules/system.nix` — Disabled ModemManager; removed `services.baloo` (not a NixOS option)
+3. `home/config/kde.nix` — Added kwinrc config: disabled blur, set AnimationSpeed=0 (instant); added baloofilerc to disable Baloo indexer via KDE config
 
-**Still pending rebuild + relogin** for kwinrc changes to take effect. After rebuild, kwin CPU should drop significantly.
+**Status:** Rebuild successful. Relogin still needed for kwinrc/baloofilerc changes to take effect.
 
-**If still sluggish after rebuild:** Look into reducing loaded KWin effects further, checking plasmashell widget overhead, and investigating why plasmashell uses 11% CPU at idle.
+**Rebuild issue (fixed):** `services.baloo` doesn't exist as a NixOS module option. Baloo is a KDE app, not a system service — disabling it must be done through `xdg.configFile."baloofilerc"` in home-manager, not NixOS services.
+
+**If still sluggish after relogin:** Look into reducing loaded KWin effects further, checking plasmashell widget overhead, and investigating why plasmashell uses 11% CPU at idle.

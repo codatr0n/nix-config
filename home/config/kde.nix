@@ -18,6 +18,12 @@
     blurEnabled=false
   '';
 
+  # Disable Baloo file indexer (huge CPU/RAM hog on Intel iGPU)
+  xdg.configFile."baloofilerc".text = ''
+    [Basic Settings]
+    Indexing-Enabled=false
+  '';
+
   home.packages = with pkgs; [
 
     # KDE apps

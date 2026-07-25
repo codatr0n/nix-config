@@ -8,6 +8,7 @@
   imports = [
     ../../home/core.nix
     ../../home/programs/common.nix
+    ../../home/programs/browsers.nix
     ../../home/programs/zsh.nix
     ../../home/programs/alacritty.nix
     ../../home/programs/starship.nix
@@ -18,8 +19,10 @@
   ];
 
   programs.git = {
-    userName = "Erik MK";
-    userEmail = "mail@erikmk.dk";
+    settings.user = {
+      name = "Erik MK";
+      email = "mail@erikmk.dk";
+    };
   };
 
 }
