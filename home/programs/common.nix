@@ -29,11 +29,9 @@
     lshw
     dmidecode
 
-    # desktop
+    # desktop apps
     bitwarden-desktop
-    librewolf
     trayscale
-    firefox
     google-chrome
     spotify
     alacritty
@@ -45,8 +43,10 @@
     joplin-desktop
 
     # developer stuff
-    python311
+    python3
     gh
+    nodejs
+    bun
 
     # printing
     gutenprint
@@ -58,7 +58,7 @@
     fastfetch
     ventoy
     yt-dlp
-    glxinfo
+    mesa-demos
     imagemagick
 
     # vs code server
@@ -72,6 +72,10 @@
     iwd
     pciutils
 
+    # file syncthing
+    jotta-cli
+    stc-cli
+
     udiskie  # Auto mount usb drives
   ];
 
@@ -79,7 +83,6 @@
     tmux = {
       enable = true;
       clock24 = true;
-      # keyMode = "vi";
       extraConfig = "mouse on";
     };
 
@@ -87,15 +90,14 @@
       enable = true;
     };
 
-    btop.enable = true; # replacement of htop/nmon
-    eza.enable = true; # A modern replacement for ‘ls’
-    jq.enable = true; # A lightweight and flexible command-line JSON processor
+    btop.enable = true;
+    eza.enable = true;
+    jq.enable = true;
     ssh.enable = true;
   };
 
   services = {
     syncthing.enable = true;
-    # enable udiskie for usb storage mount
     udiskie = {
       enable = true;
     };

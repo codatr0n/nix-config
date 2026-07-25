@@ -2,13 +2,13 @@
   description = "NixOS configuration for Funk";
 
   inputs = {
-    # NixOS official package source, here using the nixos-25.05 branch
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # NixOS official package source, using nixos-unstable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # Unstable packages for newer versions
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -65,7 +65,7 @@
 
       thinknix-t480 = let
         username = "funk";
-        stateVersion = "25.05";
+        stateVersion = "26.05";
         pkgs-unstable = import inputs.nixpkgs-unstable {
           system = "x86_64-linux";
           config.allowUnfree = true;
