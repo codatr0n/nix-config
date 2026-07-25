@@ -94,4 +94,10 @@
   # Udisk - auto mount usb drives
   services.udisks2.enable = true;
 
+  # Disable ModemManager (no modem on this hardware)
+  systemd.services.ModemManager.enable = false;
+
+  # Disable Baloo file indexer (huge CPU/RAM hog on Intel iGPU)
+  services.baloo.enable = false;
+
 }

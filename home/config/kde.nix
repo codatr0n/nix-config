@@ -9,6 +9,15 @@
     style.name = "breeze";
   };
 
+  # Disable blur and reduce animations for Intel iGPU performance
+  xdg.configFile."kwinrc".text = ''
+    [Compositing]
+    AnimationSpeed=0
+
+    [Plugins]
+    blurEnabled=false
+  '';
+
   home.packages = with pkgs; [
 
     # KDE apps
