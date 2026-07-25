@@ -54,9 +54,13 @@
   # nix garbage collect
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "03:00";
+    persistent = false;
     options = "--delete-older-than 60d";
   };
+
+  # keep KDE processes in RAM instead of swapping under memory pressure
+  boot.kernel.sysctl."vm.swappiness" = 10;
 
 
   # Allow unfree packages
